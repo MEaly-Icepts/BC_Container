@@ -20,7 +20,8 @@ if (Get-Module -ListAvailable -Name BcContainerHelper) {
 else {
     Get-Module BcContainerHelper
 }
-$CTName = Write-Host "Container Name?" 
+$CTName = Write-Host "Container Name?"
+ 
 
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
-New-BCContainer -accept_eula -containerName $CTName -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword ` -updatHosts
+New-BCContainer -accept_eula -containerName $CTName -assignPremiumPlan -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword ` -updatHosts
