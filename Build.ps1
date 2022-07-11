@@ -10,18 +10,15 @@
 .LINK
 	https://github.com/MEaly58
 #>
-<#
-Variables:
+##Variables
+$CTName = "Sandbox"
 
-#>
 if (Get-Module -ListAvailable -Name BcContainerHelper) {
     Import-Module BcContainerHelper
 } 
 else {
     Get-Module BcContainerHelper
 }
-$CTName = "Sandbox"
- 
 
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
 New-BCContainer -accept_eula -containerName $CTName -assignPremiumPlan -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword ` -updatHosts
