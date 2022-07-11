@@ -20,7 +20,7 @@ if (Get-Module -ListAvailable -Name BcContainerHelper) {
 else {
     Get-Module BcContainerHelper
 }
-$CTName = Write-Host "Container Name?"
+$CTName = "Sandbox"
  
 
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
