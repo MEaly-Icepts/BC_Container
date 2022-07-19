@@ -1,4 +1,3 @@
-#>
 if (Get-Module -ListAvailable -Name BcContainerHelper) {
     Import-Module BcContainerHelper
 } 
