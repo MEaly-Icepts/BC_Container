@@ -18,7 +18,7 @@ if (Get-Module -ListAvailable -Name BcContainerHelper) {
     Import-Module BcContainerHelper
 } 
 else {
-    Get-Module BcContainerHelper
+    Install-Module -Name BcContainerHelper
 }
 
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
