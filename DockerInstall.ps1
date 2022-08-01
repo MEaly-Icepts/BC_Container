@@ -1,4 +1,9 @@
 <#
+Initilize TLS1.2
+#>
+Write-Output "Inistilizing TLS 1.2"
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+<#
 First we test if Choclatey is installed and if not install it. 
 #>
 
