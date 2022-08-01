@@ -2,7 +2,7 @@
 .SYNOPSIS
 	Build a docker container for Dyanmics BC
 .DESCRIPTION
-	This script will pull down the newest container of Business Central 
+	This script will load BcContainerHelper Module, and pull down and start the newest container of Business Central 
 .NOTES
 	File Name: Build.ps1
 	Author: Mathew Ealy
