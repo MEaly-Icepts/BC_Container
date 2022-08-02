@@ -40,5 +40,5 @@ choco install docker-desktop
 Determine logged in user add to docker group
 #>
 Write-Output "Adding user to Docker group"
-$User = $env:UserName
+$User = Get-WMIObject -class Win32_ComputerSystem | Select-Object username
 Add-LocalGroupMember -Group Docker-users -Member $User -Confirm
