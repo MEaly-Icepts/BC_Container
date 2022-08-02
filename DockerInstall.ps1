@@ -1,7 +1,7 @@
 <#
 Initilize TLS1.2
 #>
-Write-Output "Inistilizing TLS 1.2"
+Write-Output "Initializing TLS 1.2"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
 <#

@@ -11,22 +11,25 @@
 	https://github.com/MEaly58
 #>
 
+
 ##Variables
 $CTName = "Sandbox"
 
-Write-Output "Inistilizing TLS 1.2"
+#Initializing TLS 1.2 to prevent any connection errors
+Write-Output "Initializing TLS 1.2"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
+#Check if PowershellGet/NuGet is installed
 if(Get-PackageProvider -Name PowershellGet){
 	Write-Output "PowershellGet installed"
 }
 else{
 	Install-PackageProvider -Name NuGet -Force
 	Install-PackageProvider -Name PowershellGet -Force
-	Write-Output "Installing Package managment software"
+	Write-Output "Installing package management software"
 }
 
-
+#Check if BcContainerHelper module is installed
 if (Get-Module -ListAvailable -Name BcContainerHelper) {
     Import-Module BcContainerHelper
 } 
@@ -34,5 +37,6 @@ else {
     Install-Module -Name BcContainerHelper
 }
 
+#Get latest verions of Bc artifacts & mount container
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
 New-BCContainer -accept_eula -containerName $CTName -assignPremiumPlan -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword ` -updatHosts
