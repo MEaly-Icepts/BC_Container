@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
 Initilize TLS1.2
 #>
