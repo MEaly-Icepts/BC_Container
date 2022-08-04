@@ -43,7 +43,7 @@ if ($PublishExt -eq 1) {
 }
 
 #Sync Application
-if ($SyncApp -eq 1) {
+if ($SyncExt -eq 1) {
 	if ($SyncExtClean -eq 1) {
     	Sync-BcContainerApp -containerName $ContainerName -appName $ExtName -appVersion $Version -mode Clean
   	} else {
