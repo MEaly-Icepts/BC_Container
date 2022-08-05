@@ -26,7 +26,7 @@ $SyncExt=1
 $SyncExtClean=1
 
 
-#Check if BcContainerHelper module is installed
+#Check if BcContainerHelper module is installed & load it if it is. Download & load if not
 if (Get-Module -ListAvailable -Name BcContainerHelper) {
     Write-Output "Loading BcContainerHelper"
     Import-Module BcContainerHelper

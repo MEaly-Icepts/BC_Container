@@ -11,7 +11,6 @@
 	https://github.com/MEaly58
 #>
 
-
 ##Variables
 $CTName = "Sandbox"
 
@@ -29,12 +28,15 @@ else{
 	Write-Output "Installing package management software"
 }
 
-#Check if BcContainerHelper module is installed
+#Check if BcContainerHelper module is installed & load it if it is. Download & load if not
 if (Get-Module -ListAvailable -Name BcContainerHelper) {
+    Write-Output "Loading BcContainerHelper"
     Import-Module BcContainerHelper
 } 
 else {
+    Write-Output "BcContainerHelper Missing, intalling now"
     Install-Module -Name BcContainerHelper
+    Import-Module BcContainerHelper
 }
 
 #Get latest verions of Bc artifacts & mount container
