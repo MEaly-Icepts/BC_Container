@@ -12,4 +12,4 @@ Run this script to download the newest BC artifacts in single tenant mode. *Can 
 
 [NewUsers.ps1](https://github.com/MEaly-Icepts/BC_Container/blob/master/NewUsers.ps1) *Work in progress*
 
-[Extension_Install.ps1](https://github.com/MEaly-Icepts/BC_Container/blob/master/Extension_Install.ps1)*Work in progress*
+[Extension_Install.ps1](https://github.com/MEaly-Icepts/BC_Container/blob/master/Extension_Install.ps1) *Work in progress*
