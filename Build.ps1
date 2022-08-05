@@ -28,7 +28,7 @@ else{
 	Write-Output "Installing package management software"
 }
 
-#Check if BcContainerHelper module is installed & load it if it is. Download & load if not
+#Check if BcContainerHelper module is installed & load it. Download & load if not yet installed. 
 if (Get-Module -ListAvailable -Name BcContainerHelper) {
     Write-Output "Loading BcContainerHelper"
     Import-Module BcContainerHelper
