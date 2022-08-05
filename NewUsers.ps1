@@ -22,7 +22,7 @@ else {
     Import-Module BcContainerHelper
 }
 
-#variables
+#Variables
 $users = Import-CSV -path "C:\Folder\User.csv"
 $Container = "ContainerName"
 

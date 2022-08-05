@@ -39,6 +39,6 @@ else {
     Import-Module BcContainerHelper
 }
 
-#Get latest verions of Bc artifacts & mount container
+#Get latest verions of BC artifacts & mount container
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
 New-BCContainer -accept_eula -containerName $CTName -assignPremiumPlan -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword ` -updatHosts
