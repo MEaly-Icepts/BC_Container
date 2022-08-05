@@ -12,4 +12,8 @@ Run this script to download the newest BC artifacts in single tenant mode. *Can 
 
 [NewUsers.ps1](https://github.com/MEaly-Icepts/BC_Container/blob/master/NewUsers.ps1) *Work in progress*
 
+This script can be run to add more users to a Dynamics BC container for testing/demo purposes. Currently configured to use a csv file however it can easily be adapted to add a single user. 
+
 [Extension_Install.ps1](https://github.com/MEaly-Icepts/BC_Container/blob/master/Extension_Install.ps1) *Work in progress*
+
+This script will import a localy hosted extension into your Dynamics BC container. 
