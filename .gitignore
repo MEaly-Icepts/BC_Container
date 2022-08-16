@@ -1,2 +1,5 @@
 #ignore my working files
 WORKING*
+
+#Ignore messed up install file
+DockerInstall.ps1
