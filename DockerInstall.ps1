@@ -1,4 +1,6 @@
 #Requires -RunAsAdministrator
+$ErrorActionPreference = 'Stop';
+
 
 <#
 Initilize TLS1.2
