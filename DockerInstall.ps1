@@ -19,19 +19,7 @@ else{
 }
 
 <#
-Test if Hyper-V is enabled. Enable if not
-#>
-$hyperv = Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V -Online
-if($hyperv.State -eq "Enabled"){
-    Write-Output "Hyper-V enabled"
-}
-else{
-    Write-Output "Enabling Hyper-V"
-    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-}
-
-<#
-Install Docker desktop application using chocolaty & add user to the docker group
+Install Docker desktop application using chocolaty
 #>
 Write-Output "Installing Docker Desktop"
 choco install docker-desktop
@@ -42,3 +30,15 @@ Determine logged in user add to docker group
 Write-Output "Adding user to Docker group"
 $User = Get-WMIObject -class Win32_ComputerSystem | Select-Object username
 Add-LocalGroupMember -Group Docker-users -Member $User -Confirm
+
+<#
+Test if Hyper-V is enabled. Enable if not ** requires a restart
+#>
+$hyperv = Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V -Online
+if($hyperv.State -eq "Enabled"){
+    Write-Output "Hyper-V enabled"
+}
+else{
+    Write-Output "Enabling Hyper-V"
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+}
