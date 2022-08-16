@@ -9,26 +9,15 @@ Write-Output "Initializing TLS 1.2"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
 <#
-Test if Choclatey is installed and if not install it. 
-#>
-$testchoco = powershell choco -v
-if(-not($testchoco)){
-    Write-Output "Seems Chocolatey is not installed, installing now"
-    Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-}
-else{
-    Write-Output "Chocolatey Version $testchoco is already installed"
-}
-
-<#
-Install Docker desktop application using chocolaty
+Install Docker 
 #>
 if(-not(docker --version)){
 Write-Output "Installing Docker Desktop"
-choco install docker-desktop -y -SwitchDaemon
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1" -o install-docker-ce.ps1
+.\install-docker-ce.ps1
 }
 else{
-    Write-Output "Docker installed"
+    Write-Output "Docker Installed"
 }
 
 <#
