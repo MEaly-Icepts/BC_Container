@@ -22,7 +22,7 @@ else{
 Install Docker desktop application using chocolaty
 #>
 Write-Output "Installing Docker Desktop"
-choco install docker-desktop
+choco install docker-desktop -y
 
 <#
 Determine logged in user add to docker group
