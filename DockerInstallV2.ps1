@@ -11,14 +11,10 @@ Write-Output "Initializing TLS 1.2"
 <#
 Install Docker 
 #>
-if(-not(docker --version)){
 Write-Output "Installing Docker Desktop"
 Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1" -o install-docker-ce.ps1
 .\install-docker-ce.ps1
-}
-else{
-    Write-Output "Docker Installed"
-}
+#Removed test for docker install as it was not a good solution. 
 
 <#
 Determine logged in user add to docker group - requires reboot to pick up new group memebership
