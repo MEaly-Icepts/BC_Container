@@ -1,6 +1,6 @@
 <#!
 .SYNOPSIS
-	Build a docker container for Dyanmics BC
+	Build a docker container for Dyanmics BC bby downloading teh newest artifacts. 
 .DESCRIPTION
 	This script will load BcContainerHelper Module, and pull down and start the newest container of Business Central 
 .NOTES
