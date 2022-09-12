@@ -27,12 +27,13 @@ else{
 <#
 Install Docker desktop application using chocolaty
 #>
-if(-not(docker --version)){
-Write-Output "Installing Docker Desktop"
-choco install docker-desktop -y -SwitchDaemon
+$service = Get-Service -Name docker -ErrorAction SilentlyContinue
+if($service.Length -gt 0){
+    Write-Output "Docker installed"
 }
 else{
-    Write-Output "Docker installed"
+    Write-Output "Installing Docker Desktop"
+    choco install docker-desktop -y -SwitchDaemon
 }
 
 <#
