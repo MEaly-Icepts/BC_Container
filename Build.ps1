@@ -1,6 +1,6 @@
 <#!
 .SYNOPSIS
-	Build a docker container for Dyanmics BC bby downloading teh newest artifacts. 
+	Build a docker container for Dyanmics BC by downloading the newest release artifacts. 
 .DESCRIPTION
 	This script will load BcContainerHelper Module, and pull down and start the newest container of Business Central 
 .NOTES
@@ -10,7 +10,7 @@
 .LINK
 	https://github.com/MEaly58
 #>
-$ErrorActionPreference = 'Stop';
+# $ErrorActionPreference = 'Stop';
 
 ##Variables
 $CTName = "Sandbox"
@@ -42,4 +42,4 @@ else {
 
 #Get latest verions of BC artifacts & mount container
 $artifactUrl = Get-BcArtifactUrl -type sandbox -country us -select Latest
-New-BCContainer -accept_eula -containerName $CTName -assignPremiumPlan -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword ` -updatHosts
+New-BCContainer -accept_eula -containerName $CTName -assignPremiumPlan -artifactUrl $artifactUrl -multitenant:$false -Credential $credential -auth UserPassword  -updatHosts
