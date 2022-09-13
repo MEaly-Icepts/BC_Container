@@ -12,6 +12,8 @@
 #>
 #Requires -RunAsAdministrator
 
+Set-ExecutionPolicy Bypass -Scope Process -Force
+
 <#
 Test if Choclatey is installed and if not install it. 
 #>
