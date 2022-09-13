@@ -10,7 +10,7 @@
 .LINK
 	https://github.com/MEaly58
 #>
-# $ErrorActionPreference = 'Stop';
+#$ErrorActionPreference = SilentlyContinue;
 
 ##Variables
 $CTName = "Sandbox"
