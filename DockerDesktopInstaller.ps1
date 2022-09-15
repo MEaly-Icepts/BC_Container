@@ -35,11 +35,14 @@ if($service.Length -gt 0){
 }
 else{
     Write-Output "Installing Docker Desktop"
-    choco install docker-desktop -y -SwitchDaemon
+    choco install docker-desktop -y
 }
 
 <#
 Determine logged in user add to docker group - requires reboot to pick up new group memebership
+
+This doesn't work, I need to find a better way to handle this.. Maybe call multplie scripts form one script so it doesn't need to run as admin? 
+
 #>
 Write-Output "Adding user to Docker group"
 $User = Get-WMIObject -class Win32_ComputerSystem | Select-Object username
@@ -56,3 +59,7 @@ else{
     Write-Output "Enabling Hyper-V"
     Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 }
+
+<#
+Need to add a reboot here, the system wont let you change the deamon otherwise. 
+#>
