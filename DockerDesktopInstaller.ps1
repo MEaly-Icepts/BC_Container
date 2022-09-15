@@ -42,11 +42,11 @@ else{
 Determine logged in user add to docker group - requires reboot to pick up new group memebership
 
 This doesn't work, I need to find a better way to handle this.. Maybe call multplie scripts form one script so it doesn't need to run as admin? 
-
+I was miss using the -confirm flag, might have been the problem.
 #>
 Write-Output "Adding user to Docker group"
 $User = Get-WMIObject -class Win32_ComputerSystem | Select-Object username
-Add-LocalGroupMember -Group Docker-users -Member $User -Confirm
+Add-LocalGroupMember -Group Docker-users -Member $User
 
 <#
 Test if Hyper-V is enabled. Enable if not ** requires a restart if enabling Hyper-V
