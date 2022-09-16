@@ -40,9 +40,6 @@ else{
 
 <#
 Determine logged in user add to docker group - requires reboot to pick up new group memebership
-
-This doesn't work, I need to find a better way to handle this.. Maybe call multplie scripts form one script so it doesn't need to run as admin? 
-I was miss using the -confirm flag, might have been the problem.
 #>
 Write-Output "Adding user to Docker group"
 $User = Get-WMIObject -class Win32_ComputerSystem | Select-Object username
@@ -61,5 +58,7 @@ else{
 }
 
 <#
-Need to add a reboot here, the system wont let you change the deamon otherwise. 
+Reboot computer to finish install and allow switching the deamon to a windows container deamon
 #>
+Write-Host "To finish install of Docker your system needs to reboot"
+Restart-Computer -Confirm:$true
