@@ -1,14 +1,21 @@
 <#!
 .SYNOPSIS
 	Build a docker container for Dyanmics BC by downloading the newest release artifacts. 
+
 .DESCRIPTION
 	This script will load BcContainerHelper Module, and pull down and start the newest container of Business Central 
+
+.FUNCTIONALITY
+Script will download & load the BCContainerHelper module and use it to download the latest version of Dynamics BC container for use in Docker. 
+
 .NOTES
-	File Name: Build.ps1
+	File Name: ContainerBuild.ps1
 	Author: Mathew Ealy
 	Requires Powershell 5.0
+
 .LINK
 	https://github.com/MEaly58
+
 #>
 #$ErrorActionPreference = SilentlyContinue;
 
