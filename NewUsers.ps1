@@ -12,15 +12,23 @@
 #>
 
 #Check if BcContainerHelper module is installed & load it. Download & load if not yet installed. 
-if (Get-Module -ListAvailable -Name BcContainerHelper) {
-    Write-Output "Loading BcContainerHelper"
-    Import-Module BcContainerHelper
-} 
-else {
-    Write-Output "BcContainerHelper Missing, intalling now"
-    Install-Module -Name BcContainerHelper
-    Import-Module BcContainerHelper
+Write-Host "Checking that BcContainerHelper is installed..."
+$psBCCHModule = Get-InstalledModule BcContainerHelper | Sort-Object Version | Select-Object -last 1
+if ($psBCCHModule)
+{
+  Write-Host "Updating BcContainerHelper..."
+  Update-Module BcContainerHelper
+  Write-Host "Getting BcContainerHelper module version..."
+  $psBCCHModule = Get-InstalledModule BcContainerHelper | Sort-Object Version | Select-Object -last 1
 }
+else
+{
+  Write-Host "Installing BcContainerHelper..."
+  Install-Module BcContainerHelper -Force
+  Write-Host "Getting BcContainerHelper module version..."
+  $psBCCHModule = Get-InstalledModule BcContainerHelper | Sort-Object Version | Select-Object -last 1
+}
+Write-Host "BcContainerHelper module version: $($psBCCHModule.Version)"
 
 #Variables
 $users = Import-CSV -path "C:\Folder\User.csv"
