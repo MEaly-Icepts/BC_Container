@@ -26,7 +26,7 @@ $CTName = "Sandbox"
 Write-Output "Initializing TLS 1.2"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-#Check if PowershellGet/NuGet is installed
+#Check if PowershellGet is installed
 Write-Host "Checking that PowershellGet is installed..."
 $psGetModule = Get-InstalledModule PowershellGet | Sort-Object Version | Select-Object -last 1
 if ($psGetModule)
