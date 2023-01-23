@@ -41,6 +41,7 @@ else{
 #Variables
 $URL = https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
 $OutPath = "C:\temp\docker.exe"
+#Arguments being used are a quite install. auto acceot license, & configure backend to use Hyper-V
 $Arg = @("quiet","accept-license","backend=hyper-v")
 
 #Download the installer
