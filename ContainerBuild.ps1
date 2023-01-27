@@ -26,6 +26,8 @@ $CTName = "Sandbox"
 Write-Output "Initializing TLS 1.2"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
+<#Powershellget is not needed in this version of the script
+
 #Check if PowershellGet is installed
 Write-Host "Checking that PowershellGet is installed..."
 $psGetModule = Get-InstalledModule PowershellGet | Sort-Object Version | Select-Object -last 1
@@ -44,6 +46,8 @@ else
   $psGetModule = Get-InstalledModule PowershellGet | Sort-Object Version | Select-Object -last 1
 }
 Write-Host "PowershellGet module version: $($psGetModule.Version)"
+
+#>
 
 #Check if BcContainerHelper module is installed & load it. Download & load if not yet installed. 
 Write-Host "Checking that BcContainerHelper is installed..."
