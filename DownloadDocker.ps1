@@ -39,13 +39,13 @@ else{
 
 
 #Variables
-$URL = https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
+$url = https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
 $OutPath = "C:\temp\docker.exe"
-#Arguments being used are a quite install. auto acceot license, & configure backend to use Hyper-V
+#Arguments being used are a quite install. auto accept license, & configure backend to use Hyper-V
 $Arg = @("quiet","accept-license","backend=hyper-v")
 
 #Download the installer
-Invoke-WebRequest -Uri $url -OutFile $outpath
+Invoke-WebRequest -Uri $url -OutFile $OutPath
 
 #Install Docker
 Start-Process $OutPath install -ArgumentList $Arg
