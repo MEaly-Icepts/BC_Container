@@ -1,4 +1,4 @@
-<#!
+<#
 .SYNOPSIS
 	Build a docker container for Dyanmics BC by downloading the preview artifacts. 
 .DESCRIPTION

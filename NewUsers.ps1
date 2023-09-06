@@ -1,4 +1,4 @@
-<#!
+<#
 .SYNOPSIS
 	Add users to Dynamics BC container.
 .DESCRIPTION

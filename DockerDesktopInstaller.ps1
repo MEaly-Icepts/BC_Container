@@ -1,4 +1,4 @@
-<#!
+<#
 .SYNOPSIS
 	Install & Configure Dockerdesktop client for MS windows systems
 .DESCRIPTION

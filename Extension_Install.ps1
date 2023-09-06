@@ -1,4 +1,4 @@
-<#!
+<#
 .SYNOPSIS
 	Load extensions for BC containers
 .DESCRIPTION

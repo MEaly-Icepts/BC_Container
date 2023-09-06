@@ -1,4 +1,4 @@
-<#!
+<#
 .SYNOPSIS
 	This script will download the Docker desktop application. 
 
